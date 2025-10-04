@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caffeine-Corner</title>
+    <title>Brew 101 Cafe</title>
     <link rel="icon" href="assest/icon/icons8-coffee-shop-64.png">
     <link rel="stylesheet" href="css/Dashboard.css">
     <link rel="stylesheet" href="css/Customer.css">
     <link rel="stylesheet" href="css/Products.css">
     <link rel="stylesheet" href="css/Orders.css">
+    <link rel="stylesheet" href="css/History.css">
 </head>
 <body>
     <div id="container" class="container">
@@ -18,7 +19,7 @@
                 <li>
                     <a href="#">
                         <span class="icon"><img src="assest/image/DashBoard Logo.png" class="logo"></span>
-                        <span class="title" style="font-size: 1.5em;font-weight: 500; margin-top: 15px;">Caffeine Corner</span>
+                        <span class="title" style="font-size: 1.5em;font-weight: 500; margin-top: 15px;">Brew 101 Cafe</span>
                     </a>
                 </li>
                 <li class="hovered">
@@ -46,9 +47,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
-                        <span class="title">Settings</span>
+                    <a href="#" id="HistoryForm-button">
+                        <span class="icon"><ion-icon name="history-outline"></ion-icon></span>
+                        <span class="title">History</span>
                     </a>
                 </li>
                 <li>
@@ -310,12 +311,55 @@
 
             </section>
 
-            <div id="toast" class="toast"></div>
+            <!-- ------------------------------------ History Form ------------------------------------ -->
+        <section id="HistoryForm" class="HistoryForm">
+                <h2 class="FormTitle">History <span> Manage</span></h2>
+                
+                <!-- Customer Info Card Start -->
+                <div class="history-info-card" style="display: flex; gap: 2em; background: #f8e7d9; border-radius: 18px; padding: 1.5em 2em; margin-bottom: 2em; align-items: center; box-shadow: 0 2px 8px #0001;">
+                    <div style="display: flex; align-items: center; gap: 1em;">
+                        <ion-icon name="person-circle-outline" style="font-size: 2.5em; color: #a67c52;"></ion-icon>
+                        <div>
+                            <div style="font-size: 1.1em; color: #a67c52; font-weight: 600;">Customer ID</div>
+                            <div id="history-customer-id" style="font-size: 1.3em; font-weight: bold;">C001</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div style="font-size: 1.1em; color: #a67c52; font-weight: 600;">Order ID</div>
+                        <div id="history-order-id" style="font-size: 1.3em; font-weight: bold;">O123</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 1.1em; color: #a67c52; font-weight: 600;">Total Price</div>
+                        <div id="history-total-price" style="font-size: 1.3em; font-weight: bold;">₱350.00</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 1.1em; color: #a67c52; font-weight: 600;">Date & Time</div>
+                        <div id="history-date-time" style="font-size: 1.3em; font-weight: bold;">2025-09-02 14:30</div>
+                    </div>
+                </div>
+                <!-- Customer Info Card End -->
+                    
+                <div class="historyHeader-section">
+                    <h2 class="history">Order History</h2>  
+                </div>
+                <div class="history-section">
+                    <table id="historyTable" class="history-table"> 
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Customer Name</th>
+                                <th>Date</th>
+                                <th>Total Amount</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
 
+                        <tbody id="history-table-list">
 
-        </div>    
-
-        
+                        </tbody>
+                    </table>
+                </div>
+        </section>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -331,7 +375,35 @@
     <script src="js/Customer.js"></script>
     <script src="js/Products.js"></script>
     <script src="js/Orders.js"></script>
+    <script src="js/History.js"></script>
     
+    <script>
+    // List all your section IDs here
+    const sections = [
+        "DashboardForm",
+        "CustomerForm",
+        "ProductsForm",
+        "OrdersForm",
+        "HistoryForm"
+    ];
+
+    function showSection(sectionId) {
+        sections.forEach(id => {
+            document.getElementById(id).style.display = (id === sectionId) ? "block" : "none";
+        });
+    }
+
+    // Initial load: show dashboard
+    showSection("DashboardForm");
+
+    // Navigation event listeners
+    document.getElementById("Dashboard-button").onclick = () => showSection("DashboardForm");
+    document.getElementById("CustomerForm-button").onclick = () => showSection("CustomerForm");
+    document.getElementById("ProductsForm-button").onclick = () => showSection("ProductsForm");
+    document.getElementById("OrdersForm-button").onclick = () => showSection("OrdersForm");
+    document.getElementById("HistoryForm-button").onclick = () => showSection("HistoryForm");
+</script>
+<body>
 
 </body>
 </html>

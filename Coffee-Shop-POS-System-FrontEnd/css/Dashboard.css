@@ -351,3 +351,11 @@ body
 	justify-content: center;
 	color: var(--Darkbrown);
   }
+
+#DashboardForm,
+#CustomerForm,
+#ProductsForm,
+#OrdersForm,
+#HistoryForm {
+    display: none;
+}

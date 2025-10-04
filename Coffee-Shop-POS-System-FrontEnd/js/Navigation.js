@@ -26,6 +26,13 @@ document.getElementById("OrdersForm-button").addEventListener("click", function 
   document.getElementById("OrdersForm").style.display = "block";
 });
 
+document.getElementById("HistoryForm-button").addEventListener("click", function () {
+    document.getElementById("CustomerForm").style.display = "none";
+    document.getElementById("DashboardForm").style.display = "none";
+    document.getElementById("ProductsForm").style.display = "none";
+    document.getElementById("OrdersForm").style.display = "none";
+});
+
 document.getElementById("SignOutForm-button").addEventListener("click", function () {
     // Confirm logout
     const confirmLogout = confirm("Are you sure you want to log out?");
@@ -58,5 +65,11 @@ document.getElementById("product").addEventListener("click", function (){
 document.getElementById("orders").addEventListener("click", function (){
     document.getElementById("DashboardForm").style.display = "none";
     document.getElementById("OrdersForm").style.display = "block";
+});
+
+document.getElementById("history").addEventListener("click", function (){
+    document.getElementById("DashboardForm").style.display = "none";
+    document.getElementById("HistoryForm").style.display = "block"; 
+    LoadHistoryIntoTable();
 });
   
