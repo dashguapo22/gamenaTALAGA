@@ -47,7 +47,7 @@
                     <button class="ghost" id="signIn1">Sign in</button>
                 </div>
                 <div class="overlay-panel overlay-right">
-                    <h1>Hello, Admin!</h1>
+                    <h1>Hello, hello!</h1>
                     <p>Enter your personal details and start your journey with us</p>
                     <button class="ghost" id="register">Register</button>
                 </div>
