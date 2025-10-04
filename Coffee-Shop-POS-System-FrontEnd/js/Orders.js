@@ -126,6 +126,30 @@ $(document).ready(function () {
     let formatDate = date.toLocaleDateString("en-US", options);
     $("#current-date").text(formatDate);
 
+    // Save order to history
+    function saveOrderToHistory(order) {
+        let history = JSON.parse(localStorage.getItem('orderHistory')) || [];
+        history.unshift(order); // add to the start
+        localStorage.setItem('orderHistory', JSON.stringify(history));
+    }
+
+    // Example: Call this after purchase is successful
+    document.getElementById('purchase').addEventListener('click', function() {
+        // Example order object, replace with your actual order data
+        const order = {
+            orderId: document.getElementById('order-id').textContent.replace('Order ID: ', ''),
+            customerId: document.getElementById('customerDropDown').value,
+            customerName: document.getElementById('customerDropDown').selectedOptions[0]?.text || '',
+            total: document.getElementById('total').textContent,
+            date: new Date().toLocaleString(),
+            loyaltyPoints: 100 // Replace with your logic
+        };
+
+        saveOrderToHistory(order);
+
+        // Optionally, clear cart and reset form here
+    });
+
     // Initial load
     loadCustomersToDropdown();
     popOrderItems();

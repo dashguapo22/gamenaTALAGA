@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+#HistoryForm{
+    display: none;
+}
+
+.historyHeader-section{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+.historyHeader-section h2{
+    margin-left: 40px;
+    font-size: 35px;
+    color: #7f5539;
+}
+.historyHeader-section h2 span{
+    font-size: 25px;
+    color: #b08968;
+}
+.history-table{
+    margin-left: 40px;
+    margin-top: 20px;
+    width: 95%;
+    border-collapse: collapse;
+}
+
+
+.history-table th, .history-table td{
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.history-table th{
+    background-color: #f2f2f2;
+    color: #7f5539;
+}
+.history-table tr:nth-child(even){
+    background-color: #f9f9f9;
+}
+.history-table tr:hover{
+    background-color: #f1f1f1;
+}
+.history-table td button{
+    border-radius: 15px;
+    color: white;
+    background: #b08968;
+    border: 1px solid #b08968;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 8px 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.history-table td button:hover{
+    cursor: pointer;
+    background: #f8e7d6;
+    color: #7f5539;
+}
+.history-table td button:active{
+    transform: scale(0.95);
+}
+.history-table td button:focus{
+    outline: none;
+}
+.history-table td button.ghost{
+    background-color: transparent;
+    border-color: #f8e7d6;
+}
+.history-table td button.ghost:hover{
+    background-color: #f8e7d6;
+    color: #7f5539;
+}
+.history-table td button.ghost:active{
+    transform: scale(0.95);
+}
+.history-table td button.ghost:focus{
+    outline: none;
+}
+
+
+
+
+

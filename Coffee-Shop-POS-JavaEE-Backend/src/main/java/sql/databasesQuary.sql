@@ -17,3 +17,10 @@ create table OrderDetails(
     FOREIGN KEY (pro_id) REFERENCES Product(pro_id)
 );
 
+create table history(
+    order_id varchar(50) PRIMARY KEY,
+    dateAndTime DateTime,
+    contact varchar(10),
+    FOREIGN KEY (contact) REFERENCES Customer(contact)
+);
+

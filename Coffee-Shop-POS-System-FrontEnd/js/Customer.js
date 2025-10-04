@@ -93,3 +93,16 @@ document.getElementById('customer-table-list').onclick = function(e) {
 // Initial render
 renderCustomers();
 
+// Create Update button
+        const $updateCell = $("<td>");
+        const $updateButton = $("<button>").text("Update").addClass("action-button update-product").attr("data-index", index);
+        $updateButton.on("click", () => {
+            openProductRegisterForm();
+            fillFormWithProductData(product);
+            $title.text("Update Product");
+            isProductUpdateMode = true;
+            currentProductId = product.id;
+            $productButton.text("Update");
+        });
+        $updateCell.append($updateButton);
+        $row.append($updateCell);
