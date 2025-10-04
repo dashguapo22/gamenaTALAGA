@@ -45,7 +45,7 @@ document.getElementById("SignOutForm-button").addEventListener("click", function
         document.getElementById("OrdersForm").style.display = "none";
         
         // Redirect to the login page
-        window.location.href = "./Coffee-Shop-POS-System-FrontEnd/loginRegister.php";
+        window.location.href = "./loginRegister.php";
     } else {
         // Optionally handle if the user cancels the logout
         console.log("Logout canceled.");
