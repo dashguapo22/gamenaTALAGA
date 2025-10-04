@@ -135,7 +135,7 @@ $(document).ready(function () {
     $(document).on('customersUpdated', loadCustomersToDropdown);
 
     // If you want to reload customers every time Orders tab is clicked:
-    $("#OrdersForm-button").on("click", loadCustomersToDropdown);
+    $("#OrdersForm-button").on("click", loadCustomersToDropdown); 
 });
 
 

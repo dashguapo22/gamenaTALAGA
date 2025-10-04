@@ -1,28 +1,12 @@
-create database if not exists coffee_shop_pos;
+-- Active: 1755963326701@@127.0.0.1@3306
+
 
 use coffee_shop_pos;
 
-create table Customer(
-    cust_id varchar(25),
-    cust_name varchar(25),
-    address varchar(40),
-    contact varchar(10)PRIMARY KEY
-);
 
-create table Product(
-    pro_id varchar(25)PRIMARY KEY,
-    pro_name varchar(25),
-    price varchar(25),
-    category varchar(25),
-    quantity varchar(25)
-);
 
-create table Orders(
-    order_id varchar(50)PRIMARY KEY,
-    dateAndTime DateTime,
-    contact varchar(10),
-    FOREIGN KEY (contact) REFERENCES Customer(contact)
-);
+
+
 
 create table OrderDetails(
     order_id varchar(50),

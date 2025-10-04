@@ -55,7 +55,7 @@ $(document).ready(function() {
 
     const addProductToTable = (product, table, index) => {
         const $row = $("<tr>");
-        const keys = ["id", "name", "price", "category", "quantity"];
+        const keys = ["id", "name", "price", "category"];
         keys.forEach((key) => {
             const $cell = $("<td>").text(product[key]);
             $row.append($cell);
@@ -100,7 +100,7 @@ $(document).ready(function() {
         $("#productName").val(product.name);
         $("#price").val(product.price);
         $("#category").val(product.category);
-        $("#quantity").val(product.quantity);
+    
     };
 
     // Validation functions
@@ -108,7 +108,7 @@ $(document).ready(function() {
     const validateProName = (pro_name) => /^[a-zA-Z\s]+$/.test(pro_name);
     const validatePrice = (price) => /^[0-9]+(\.[0-9]{1,2})?$/.test(price) && parseFloat(price) > 0;
     const validateCategory = (category) => category.trim() !== "";
-    const validateQuantity = (quantity) => /^[0-9]+$/.test(quantity) && parseInt(quantity, 10) > 0;
+   
 
     // Handle form submit and update product
     $productForm.on("submit", async (event) => {
@@ -119,7 +119,7 @@ $(document).ready(function() {
         const name = $("#productName").val();
         const price = $("#price").val();
         const category = $("#category").val();
-        const quantity = $("#quantity").val();
+        
 
         // Validate data
         if (!validateProID(id)) {
@@ -138,17 +138,14 @@ $(document).ready(function() {
             showToast("Category cannot be empty", "error");
             return;
         }
-        if (!validateQuantity(quantity)) {
-            showToast("Quantity must be a positive number", "error");
-            return;
-        }
+        
 
         const productData = {
             id,
             name,
             price,
             category,
-            quantity,
+            
         };
 
         try {

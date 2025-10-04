@@ -92,3 +92,4 @@ document.getElementById('customer-table-list').onclick = function(e) {
 
 // Initial render
 renderCustomers();
+
